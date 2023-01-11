@@ -1,0 +1,71 @@
+<h1>Simple Tabs</h1>
+<mat-tab-group mat-align-tabs="start" animationDuration="500ms">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>
+      settings
+    </ng-template>
+    Content
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Person
+    </ng-template>
+    Content
+  </mat-tab>
+</mat-tab-group>
+<br>
+<br>
+
+
+<h1>Tabs - Stretch and Below</h1>
+<mat-tab-group mat-stretch-tabs class="mat-elevation-z4" headerPosition="below" animationDuration="500ms">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">settings</mat-icon>
+      settings
+    </ng-template>
+    Content
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">person</mat-icon>
+      Person
+    </ng-template>
+    Content
+  </mat-tab>
+</mat-tab-group>
+
+<br>
+<br>
+
+
+<h1>Tabs - Color</h1>
+<mat-tab-group class="mat-elevation-z4" headerPosition="below" color="warn" backgroundColor="primary"
+  animationDuration="500ms">
+  <mat-tab>
+    <div class="mat-tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">settings</mat-icon>
+        settings
+      </ng-template>
+      <h1>Settings</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione corrupti eos distinctio nihil quas corporis
+        recusandae dolore inventore, velit quae consequatur beatae maxime accusamus quod provident quam repudiandae
+        exercitationem eligendi.</p>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <div class="mat-tab">
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-icon">person</mat-icon>
+        Person
+      </ng-template>
+      <h1>Person</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione corrupti eos distinctio nihil quas corporis
+        recusandae dolore inventore, velit quae consequatur beatae maxime accusamus quod provident quam repudiandae
+        exercitationem eligendi.</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
