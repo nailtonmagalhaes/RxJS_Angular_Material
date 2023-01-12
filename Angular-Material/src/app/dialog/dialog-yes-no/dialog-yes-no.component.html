@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+
+<mat-dialog-content>
+  <p>{{data.message}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" [mat-dialog-close]="isConfirmed">
+    <mat-icon>close</mat-icon>Não
+  </button>
+
+  <button mat-stroked-button color="primary" (click)="closeDialog()">
+    <mat-icon>check</mat-icon>Sim
+  </button>
+</mat-dialog-actions>

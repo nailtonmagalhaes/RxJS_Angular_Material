@@ -1,0 +1,14 @@
+<h1>dialog works!</h1>
+<button mat-raised-button color="primary" (click)="openDialog()">
+  <mat-icon>favorite</mat-icon>
+  My favorite Pet
+</button>
+<br>
+<br>
+<button mat-raised-button color="primary" (click)="openConfirmationDialog()">
+  <mat-icon>help</mat-icon>
+  Confirmation
+</button>
+<br>
+<br>
+<p *ngIf="message">{{message}}</p>
