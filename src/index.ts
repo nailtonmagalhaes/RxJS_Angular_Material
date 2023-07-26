@@ -1,6 +1,6 @@
 
-import { fromEvent } from "rxjs";
-import { delay, filter, map } from "rxjs/operators";
+import { Observable, fromEvent } from "rxjs";
+import { delay, filter, map, switchMap } from "rxjs/operators";
 
 interface IMovie {
     title: string;
@@ -11,24 +11,33 @@ let output = document.getElementById('output');
 
 let click = fromEvent(button, 'click');
 
-function load(url: string) {
-    let xhr = new XMLHttpRequest();
-    xhr.addEventListener('load', () => {
-        let movies = JSON.parse(xhr.responseText);
+function load(url: string): Observable<any> {
+    return new Observable(subscriber => {
+        let xhr = new XMLHttpRequest();
+        output.innerHTML = '';
+        xhr.addEventListener('load', () => {
+            let data = JSON.parse(xhr.responseText);
+            subscriber.next(data);
+            subscriber.complete();
+        })
 
-        movies.forEach((movie: IMovie) => {
-            let div = document.createElement('div');
-            div.innerText = movie.title;
-            output.appendChild(div);
-        });
+        xhr.open('GET', url);
+        xhr.send();
     })
-
-    xhr.open('GET', url);
-    xhr.send();
 }
 
-click.subscribe({
-    next: () => load('../movies.json'),
+function renderMovie(movies: IMovie[]) {
+    movies.forEach((movie: IMovie) => {
+        let div = document.createElement('div');
+        div.innerText = movie.title;
+        output.appendChild(div);
+    });
+}
+
+click.pipe(
+    switchMap(() => load('../movies.json'))
+).subscribe({
+    next: renderMovie,
     error: (e: Error) => console.log(e),
     complete: () => console.log()
 })
