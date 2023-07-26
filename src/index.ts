@@ -13,11 +13,13 @@ let source = fromEvent(document, 'mousemove').pipe(
         return { x: e.clientX, y: e.clientY };
     }),
     filter((value: mouseTrack) => value.x < 500),
-    delay(3000)
+    delay(1000)
 );
 
 function onNext(value: mouseTrack) {
     console.log(value);
+    circle.style.left = `${value.x}px`;
+    circle.style.top = `${value.y}px`;
 }
 
 source.subscribe({
