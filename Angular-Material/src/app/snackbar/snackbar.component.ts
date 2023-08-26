@@ -35,7 +35,9 @@ export class SnackbarComponent implements OnInit {
 
   public openFromCom() {
     this.snackbar.openFromComponent(SnackbarMsnComponent, {
-      data: 'Hello people'
+      data: 'Hello people',
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
     });
   }
 
