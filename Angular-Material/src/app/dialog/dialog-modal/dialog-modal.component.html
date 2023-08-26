@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{data}}</h1>
+
+<mat-dialog-content>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ratione provident adipisci aut reiciendis quibusdam mollitia, ut laborum dolorum recusandae, iste libero. Deserunt ad eius odio neque quod ut praesentium?</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDailog()">No</button>
+  <button mat-button [mat-dialog-close]="'Bazinga from HTML'" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
