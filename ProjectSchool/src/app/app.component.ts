@@ -2,6 +2,8 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { fromEvent, map } from 'rxjs';
+import { MenuItem } from './shared/models/menuItem';
+import { menuItems } from './shared/models/menu';
 
 export const SCROLL_CONTAINER = 'mat-sidenav-content';
 export const TEXT_LIMIT = 50;
@@ -17,6 +19,7 @@ export class AppComponent {
   public isSmallScreen = false;
   public popText = false;
   public applyShadow = false;
+  public items_menu: MenuItem[]=menuItems;
 
   constructor(private breakpointObserver: BreakpointObserver) { }
 
