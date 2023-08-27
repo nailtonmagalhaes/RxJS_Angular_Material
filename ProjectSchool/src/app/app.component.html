@@ -24,7 +24,7 @@
 
   <mat-sidenav-content>
     <mat-toolbar class="toolbar-submenu" color="primary">
-      <div class="toolbar-submenu-top">
+      <mat-toolbar-row class="toolbar-submenu-top">
         <button
           matTooltip="{{sidenav.opened? 'Fechar':'Abrir'}} menu"
           matTooltipPosition="right"
@@ -33,10 +33,10 @@
           (click)="sidenav.toggle()">
           <mat-icon>{{sidenav.opened? 'close':'menu'}}</mat-icon>
         </button>
-      </div>
-      <div class="toolbar-submenu-title">
+      </mat-toolbar-row>
+      <mat-toolbar-row class="toolbar-submenu-title">
         <span *ngIf="!popText">{{menuName}}</span>
-      </div>
+      </mat-toolbar-row>
     </mat-toolbar>
 
     <router-outlet></router-outlet>

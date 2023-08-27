@@ -43,8 +43,6 @@ export class AppComponent {
     ).subscribe((event: NavigationEnd) => {
       let moduleName = event.url.split('/')[1];
 
-      console.log(event.url);
-
       this.menuName = this.items_menu.filter((item: MenuItem) => item.link == `/${moduleName}`)[0].label;
     });
   }
@@ -56,7 +54,7 @@ export class AppComponent {
 
   ngAfterContentInit(): void {
     this.breakpointObserver
-      .observe(['(max-width: 800px'])
+      .observe(['(max-width: 800px)'])
       .subscribe((res) => this.isSmallScreen = res.matches);
   }
 
