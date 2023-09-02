@@ -40,6 +40,7 @@ jobs:
           nailtonmagalhaes/RxJS_Angular_Material:v${{ github.run_number }}
   CD:
     runs-on: ubuntu-latest
+    needs: CI
     steps:
     - name: Deploy no Azuere Web App
       uses: Azure/webapps-deploy@v2.2.11
