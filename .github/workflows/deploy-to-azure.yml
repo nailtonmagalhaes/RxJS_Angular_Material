@@ -36,6 +36,6 @@ jobs:
         file: ./ProjectSchool/Dockerfile
         push: true
         tags: |
-          nailtonmagalhaes/RxJS_Angular_Material: latest
-          nailtonmagalhaes/RxJS_Angular_Material: v${{ github.run_number }}
+          nailtonmagalhaes/RxJS_Angular_Material:latest
+          nailtonmagalhaes/RxJS_Angular_Material:v${{ github.run_number }}
           
