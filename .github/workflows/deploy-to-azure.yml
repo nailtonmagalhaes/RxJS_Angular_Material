@@ -17,8 +17,8 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        cache-dependency-path: ./src/package-lock.json
+        cache-dependency-path: ./ProjectSchool/package-lock.json
     - name: Execução do npm install e o teste
       run: 
         npm install
-      working-directory: ./src
+      working-directory: ./ProjectSchool
