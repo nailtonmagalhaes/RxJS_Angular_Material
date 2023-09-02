@@ -19,6 +19,23 @@ jobs:
         cache: 'npm'
         cache-dependency-path: ./ProjectSchool/package-lock.json
     - name: Execução do npm install e o teste
-      run: 
+      run: |
         npm install
       working-directory: ./ProjectSchool
+
+    - name: Docker Login
+      uses: docker/login-action@v2.2.0
+      with:
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    - name: Construção da imagem do container da aplicação
+      uses: docker/build-push-action@v4.1.1
+      with: 
+        context: ./ProjectSchool
+        file: ./ProjectSchool/Dockerfile
+        push: true
+        tags: |
+          nailtonmagalhaes/RxJS_Angular_Material: latest
+          nailtonmagalhaes/RxJS_Angular_Material: v${{ github.run_number }}
+          
