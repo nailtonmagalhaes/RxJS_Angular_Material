@@ -36,7 +36,6 @@ jobs:
         file: ./ProjectSchool/Dockerfile
         push: true
         tags: |
-          nailtonmagalhaes/RxJS_Angular_Material:first
           nailtonmagalhaes/RxJS_Angular_Material:v${{ github.run_number }}
   CD:
     runs-on: ubuntu-latest
