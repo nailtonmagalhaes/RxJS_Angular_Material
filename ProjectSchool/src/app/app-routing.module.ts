@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'support',
     loadChildren: () => import('./pages/support/support.module').then(m => m.SupportModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard'
   }
 ];
 
